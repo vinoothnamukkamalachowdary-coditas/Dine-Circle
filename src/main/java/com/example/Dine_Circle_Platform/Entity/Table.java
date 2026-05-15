@@ -7,16 +7,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class RestaurantBranch {
-    private String branchName;
-    private String address;
+public class Table {
+    private String tableNumber;
+    private Integer capacity;
+    private Boolean occupied;
 
     @ManyToOne
-    private Restaurant restaurant;
+    private RestaurantBranch branch;
 
     @ManyToOne
-    private User manager;
+    private User assignedWaiter;
 }
